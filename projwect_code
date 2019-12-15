@@ -1,0 +1,204 @@
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Harinder Singh Gill studentid-C0726457
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+myDB.createCollection("Services" ,function(err,respond){
+if(err) throw err;
+
+console.log('collection created');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Hrainder Singh Gill studentid-C0726457
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var addDoc = [
+   { service_name: "coop and career services" },
+{ service_name: "campus shop" },
+{ service_name: "event centre" },
+{ service_name: "Library" },
+{ service_name: "Placements" },
+{ service_name: "student administrative council" },
+{ service_name: "Online Training Development" },
+{ service_name: "Financial Aid" },
+{ service_name: "Tim Hortons" },
+{ service_name: "Residence" },
+{ service_name: "Research and innovation" },
+{ service_name: "E sports Arena" }
+
+];
+myDB.collection("Services").insertMany(addDoc,function(err,respond){
+if(err) throw err;
+
+console.log('documents inserted');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Arsh Dhaliwal studentid-C0726408
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var myquery = {service_name:"campus shop"};
+var newvalues = {$set:{service_name: "canteen"} };
+
+myDB.collection("Services" ).updateOne(myquery,newvalues,function(err,respond){
+if(err) throw err;
+
+console.log('document updated');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Harinder Gill Singh studentid-C0726457
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var myquery = {service_name:"canteen"};
+
+myDB.collection("Services" ).deleteOne(myquery,function(err,respond){
+if(err) throw err;
+
+console.log('document deleted');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Harinder Singh Gill studentid-C0726457
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+myDB.createCollection("Events" ,function(err,respond){
+if(err) throw err;
+
+console.log('New collection created');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Harinder Singh Gill studentid-C0726457
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var addDoc = [
+  { event_name: "corporate conferences"},
+  { event_name: "work shops"},
+  { event_name: "Team building sessions"},
+  { event_name: "Meetings"},
+  { event_name: "Trade shows"},
+  { event_name: "Breakout session groups"},
+  { event_name: "cultural activities"}
+ 
+];
+myDB.collection("Events").insertMany(addDoc,function(err,respond){
+if(err) throw err;
+
+console.log('documents inserted');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Harinder Singh Gill studentid-C0726457
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+myDB.createCollection("Student_Policies" ,function(err,respond){
+if(err) throw err;
+
+console.log('New collection created');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Harinder Singh Gill studentid-C0726457
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var addDoc = [
+  { Pname: "Refund and withdrawl policy"},
+  { Pname: "Missed tests and classes"},
+   { Pname: "Evaluation of students"},
+{ Pname: "Academic Breaks"},
+{ Pname: "Student complaints"},
+{ Pname: "Transfer credit application"},
+{ Pname: "Readdmission to program"},
+{ Pname: "Late fees"},
+{ Pname: "Grade appeals"},
+{ Pname: "Accommodating student religious observances "},
+{ Pname: "Medical insurance"},
+{ Pname: "Violence"},
+ 
+];
+myDB.collection("Student_Policies").insertMany(addDoc,function(err,respond){
+if(err) throw err;
+
+console.log('documents inserted');
+db.close();
+});
+});
